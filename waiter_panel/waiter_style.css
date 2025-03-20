@@ -1,0 +1,540 @@
+/* Base Styles */
+:root {
+    --primary-color: #e74c3c; /* Matching chef panel */
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --error-color: #e74c3c;
+    --bg-color: #f5f6fa;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+/* Waiter Container */
+.waiter-container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Waiter Header */
+.waiter-header {
+    background: var(--card-bg);
+    padding: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Allow wrapping for better mobile layout */
+}
+
+.waiter-header h1 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.search-bar {
+    flex-grow: 1; /* Allow search bar to take remaining space */
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.search-bar i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Waiter Main */
+.waiter-main {
+    padding: 0.5rem;
+}
+
+/* Orders Grid */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.orders-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Order Card */
+.order-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 0.5rem;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.order-number {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.order-status {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.table-info, .customer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.table-info i, .customer-info i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.dishes-list {
+    margin-top: 0.25rem;
+}
+
+.dish-item {
+    padding: 0.25rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+}
+
+/* Pickup Action */
+.pickup-action {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-pickup {
+    padding: 0.5rem 1rem;
+    background: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-pickup:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.order-picked {
+    background: #e0e0e0;
+    opacity: 0.7;
+}
+
+.order-picked .order-number {
+    color: #666;
+}
+
+.order-picked .btn-pickup {
+    display: none;
+}
+
+/* Toast Notifications */
+.notifications {
+    position: fixed;
+    top: 70px; /* Below header */
+    right: 10px;
+    z-index: 1000;
+    width: 100%;
+    max-width: 300px;
+}
+
+.notification {
+    background: white;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+    border-left: 4px solid;
+    font-size: 0.85rem;
+}
+
+.notification.success {
+    border-color: var(--success-color);
+}
+
+.notification.error {
+    border-color: var(--error-color);
+}
+
+.notification .close-notification {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.order-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --card-bg: #2d2d2d;
+        --secondary-color: #e1e1e1;
+    }
+
+    body {
+        color: #e1e1e1;
+    }
+
+    .order-card {
+        background: var(--card-bg);
+    }
+
+    .order-header,
+    .dish-item,
+    .table-info,
+    .customer-info {
+        background: #363636;
+    }
+}
+
+/* Notification Bell */
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-bell i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.notification-bell .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--error-color);
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    min-width: 1rem;
+    text-align: center;
+}
+
+/* Shake Animation for Bell */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.notification-bell.shake {
+    animation: shake 0.5s ease-in-out;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevents text wrapping on small screens */
+}
+
+.logout-btn i {
+    margin-right: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .waiter-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar,
+    .header-right {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .header-right {
+        justify-content: flex-end;
+    }
+
+    .logout-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
+/* User Name */
+.user-name {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Adjust based on design needs */
+}
+
+@media (max-width: 768px) {
+    .user-name {
+        font-size: 0.8rem;
+        max-width: 150px;
+        margin: 0.5rem 0;
+    }
+}
+.menu-bar {
+    position: relative;
+}
+
+.menu-toggle {
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: auto; /* Ensure pointer events are enabled */
+}
+
+.menu-dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure Icons and Links are Visible and Clickable */
+.menu-option {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
+    cursor: pointer; /* Indicate clickable */
+    outline: none; /* Remove default outline for better look */
+}
+
+.menu-option:last-child {
+    border-bottom: none;
+}
+
+.menu-option i {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu-option:hover {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+    padding-left: 1.25rem;
+}
+
+.menu-option:hover i {
+    color: #c0392b;
+}
+
+/* Ensure Menu is Fully Visible on Mobile */
+@media (max-width: 768px) {
+    .waiter-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar,
+    .header-right,
+    .user-name {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .header-right {
+        justify-content: flex-end;
+    }
+
+    .menu-bar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu-dropdown {
+        right: 0;
+        left: auto;
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .menu-option {
+        font-size: 0.85rem;
+        padding: 0.65rem 1rem;
+    }
+}

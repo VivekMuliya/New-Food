@@ -1,0 +1,569 @@
+[02-Feb-2025 09:40:45 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:41:19 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [full_path] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php37CF.tmp
+            [error] => 0
+            [size] => 113166
+        )
+
+)
+
+[02-Feb-2025 09:41:19 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 09:41:19 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f2fafd751e_1738485679.jpeg
+[02-Feb-2025 09:41:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function imagecreatefromjpeg() in C:\xampp\htdocs\food-shop\image_functions.php:32
+Stack trace:
+#0 C:\xampp\htdocs\food-shop\upload_image.php(89): optimizeImage('uploads/dishes/...', 'uploads/dishes/...')
+#1 {main}
+  thrown in C:\xampp\htdocs\food-shop\image_functions.php on line 32
+[02-Feb-2025 09:42:35 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [full_path] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php5F49.tmp
+            [error] => 0
+            [size] => 113166
+        )
+
+)
+
+[02-Feb-2025 09:42:35 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 45
+)
+
+[02-Feb-2025 09:42:35 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f2ffb7af94_1738485755.jpeg
+[02-Feb-2025 09:42:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function imagecreatefromjpeg() in C:\xampp\htdocs\food-shop\image_functions.php:32
+Stack trace:
+#0 C:\xampp\htdocs\food-shop\upload_image.php(89): optimizeImage('uploads/dishes/...', 'uploads/dishes/...')
+#1 {main}
+  thrown in C:\xampp\htdocs\food-shop\image_functions.php on line 32
+[02-Feb-2025 09:43:20 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-roman-odintsov-5339079.jpg
+            [full_path] => pexels-roman-odintsov-5339079.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpFBE.tmp
+            [error] => 0
+            [size] => 1267062
+        )
+
+)
+
+[02-Feb-2025 09:43:20 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 09:43:20 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f3028b5332_1738485800.jpg
+[02-Feb-2025 09:43:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function imagecreatefromjpeg() in C:\xampp\htdocs\food-shop\image_functions.php:32
+Stack trace:
+#0 C:\xampp\htdocs\food-shop\upload_image.php(89): optimizeImage('uploads/dishes/...', 'uploads/dishes/...')
+#1 {main}
+  thrown in C:\xampp\htdocs\food-shop\image_functions.php on line 32
+[02-Feb-2025 09:48:12 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:13 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:15 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:16 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:16 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:16 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:16 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:17 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:48:26 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 09:53:11 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => rod-long-O4i1SVvckII-unsplash.jpg
+            [full_path] => rod-long-O4i1SVvckII-unsplash.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php1353.tmp
+            [error] => 0
+            [size] => 2424700
+        )
+
+)
+
+[02-Feb-2025 09:53:11 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 09:53:11 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f32778b113_1738486391.jpg
+[02-Feb-2025 09:53:14 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f32778b113_1738486391.jpg
+[02-Feb-2025 09:58:13 Europe/Berlin] Error in upload_image.php: No image file uploaded
+[02-Feb-2025 11:13:09 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php49C3.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:13:09 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:13:09 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4535d7ebe_1738491189.jpg
+[02-Feb-2025 11:13:18 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4535d7ebe_1738491189.jpg
+[02-Feb-2025 11:15:10 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2308.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:15:10 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:15:10 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f45aea5630_1738491310.jpg
+[02-Feb-2025 11:15:17 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f45aea5630_1738491310.jpg
+[02-Feb-2025 11:18:46 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php6E3D.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:18:46 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:18:46 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f468686f92_1738491526.jpg
+[02-Feb-2025 11:18:55 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f468686f92_1738491526.jpg
+[02-Feb-2025 11:26:52 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpD9A8.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:26:52 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:26:52 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f486cde025_1738492012.jpg
+[02-Feb-2025 11:26:55 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f486cde025_1738492012.jpg
+[02-Feb-2025 11:34:34 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpE5CC.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:34:34 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:34:34 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4a3aaa717_1738492474.jpg
+[02-Feb-2025 11:34:39 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4a3aaa717_1738492474.jpg
+[02-Feb-2025 11:37:08 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php3DDA.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:37:08 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:37:08 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4ad44ae2f_1738492628.jpg
+[02-Feb-2025 11:37:10 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4ad44ae2f_1738492628.jpg
+[02-Feb-2025 11:37:15 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [full_path] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php5981.tmp
+            [error] => 0
+            [size] => 2883815
+        )
+
+)
+
+[02-Feb-2025 11:37:15 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[02-Feb-2025 11:37:15 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4adb79983_1738492635.jpg
+[02-Feb-2025 11:37:22 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4adb79983_1738492635.jpg
+[02-Feb-2025 11:44:10 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [full_path] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpAD52.tmp
+            [error] => 0
+            [size] => 2883815
+        )
+
+)
+
+[02-Feb-2025 11:44:10 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:44:10 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4c7a180df_1738493050.jpg
+[02-Feb-2025 11:44:13 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4c7a180df_1738493050.jpg
+[02-Feb-2025 11:44:13 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpBC57.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:44:13 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[02-Feb-2025 11:44:13 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4c7dcee93_1738493053.jpg
+[02-Feb-2025 11:44:15 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4c7dcee93_1738493053.jpg
+[02-Feb-2025 11:49:29 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [full_path] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php8DDD.tmp
+            [error] => 0
+            [size] => 2883815
+        )
+
+)
+
+[02-Feb-2025 11:49:29 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:49:29 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4db9a2c3f_1738493369.jpg
+[02-Feb-2025 11:49:33 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4db9a2c3f_1738493369.jpg
+[02-Feb-2025 11:49:33 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php9C65.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:49:33 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[02-Feb-2025 11:49:33 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4dbd52664_1738493373.jpg
+[02-Feb-2025 11:49:35 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4dbd52664_1738493373.jpg
+[02-Feb-2025 11:50:03 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [full_path] => pexels-dhiraj-jain-207743066-12737916.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php104E.tmp
+            [error] => 0
+            [size] => 1379874
+        )
+
+)
+
+[02-Feb-2025 11:50:03 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 11:50:03 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4ddb1b2c7_1738493403.jpg
+[02-Feb-2025 11:50:05 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4ddb1b2c7_1738493403.jpg
+[02-Feb-2025 11:50:10 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [full_path] => pexels-kunal-lakhotia-781256899-28674541.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2DCA.tmp
+            [error] => 0
+            [size] => 2883815
+        )
+
+)
+
+[02-Feb-2025 11:50:10 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[02-Feb-2025 11:50:10 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f4de2a0b40_1738493410.jpg
+[02-Feb-2025 11:50:14 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f4de2a0b40_1738493410.jpg
+[02-Feb-2025 15:05:53 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => 6775f1a642ab8_1735782822.jpg
+            [full_path] => 6775f1a642ab8_1735782822.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php5ADF.tmp
+            [error] => 0
+            [size] => 1001670
+        )
+
+)
+
+[02-Feb-2025 15:05:53 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 15:05:53 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f7bc11e3d9_1738505153.jpg
+[02-Feb-2025 15:05:54 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f7bc11e3d9_1738505153.jpg
+[02-Feb-2025 15:07:05 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => 6775f1a642ab8_1735782822.jpg
+            [full_path] => 6775f1a642ab8_1735782822.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php747E.tmp
+            [error] => 0
+            [size] => 1001670
+        )
+
+)
+
+[02-Feb-2025 15:07:05 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[02-Feb-2025 15:07:05 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f7c09316a1_1738505225.jpg
+[02-Feb-2025 15:07:06 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f7c09316a1_1738505225.jpg
+[02-Feb-2025 15:07:06 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => 6775f1a6423b9_1735782822.jpg
+            [full_path] => 6775f1a6423b9_1735782822.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php7A8A.tmp
+            [error] => 0
+            [size] => 2883815
+        )
+
+)
+
+[02-Feb-2025 15:07:06 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[02-Feb-2025 15:07:06 Europe/Berlin] File moved to temp location: uploads/dishes/temp/679f7c0abd35a_1738505226.jpg
+[02-Feb-2025 15:07:10 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/679f7c0abd35a_1738505226.jpg
+[05-Feb-2025 04:59:18 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => 6775f1a642ab8_1735782822.jpg
+            [full_path] => 6775f1a642ab8_1735782822.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php93E0.tmp
+            [error] => 0
+            [size] => 1001670
+        )
+
+)
+
+[05-Feb-2025 04:59:18 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[05-Feb-2025 04:59:18 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67a2e216c7a65_1738727958.jpg
+[05-Feb-2025 04:59:20 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67a2e216c7a65_1738727958.jpg
+[20-Feb-2025 11:32:00 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [full_path] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php2523.tmp
+            [error] => 0
+            [size] => 113166
+        )
+
+)
+
+[20-Feb-2025 11:32:00 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 27
+)
+
+[20-Feb-2025 11:32:01 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67b704a10142b_1740047521.jpeg
+[20-Feb-2025 11:32:01 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67b704a10142b_1740047521.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Caramel Kheer _ Raksha Bandhan Special.jpeg
+            [full_path] => Caramel Kheer _ Raksha Bandhan Special.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php624B.tmp
+            [error] => 0
+            [size] => 50549
+        )
+
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 27
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67bfec014d249_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67bfec014d249_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [full_path] => Surti Undhiyu Recipe (Gujarati Undhiyu).jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php6375.tmp
+            [error] => 0
+            [size] => 113166
+        )
+
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 28
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67bfec015c9a1_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67bfec015c9a1_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Khaman Dhokla (Soft & Spongy) _ Cook Click N Devour!!!.jpeg
+            [full_path] => Khaman Dhokla (Soft & Spongy) _ Cook Click N Devour!!!.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php63B4.tmp
+            [error] => 0
+            [size] => 106860
+        )
+
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 29
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67bfec016a540_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67bfec016a540_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Received upload request - Files: Array
+(
+    [image] => Array
+        (
+            [name] => Perfect Kathiyawadi Undhiyu - Sanjana_Feasts - Gujarati Cooking.jpeg
+            [full_path] => Perfect Kathiyawadi Undhiyu - Sanjana_Feasts - Gujarati Cooking.jpeg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php63F4.tmp
+            [error] => 0
+            [size] => 189456
+        )
+
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] POST data: Array
+(
+    [dish_id] => 30
+)
+
+[27-Feb-2025 05:37:21 Europe/Berlin] File moved to temp location: uploads/dishes/temp/67bfec0177b84_1740631041.jpeg
+[27-Feb-2025 05:37:21 Europe/Berlin] Image optimized successfully: uploads/dishes/optimized/67bfec0177b84_1740631041.jpeg
