@@ -39,7 +39,7 @@
     async function pollOrderUpdates() {
         console.log('pollOrderUpdates: Fetching updates...');
         try {
-            const response = await fetch(`get_order_updates.php?last_check=${encodeURIComponent(lastUpdateTime || '1970-01-01 00:00:00')}`);
+            const response = await fetch(`../process/get_order_updates.php?last_check=${encodeURIComponent(lastUpdateTime || '1970-01-01 00:00:00')}`);
             const updates = await response.json();
             console.log('pollOrderUpdates: Updates data:', updates);
             if (updates.success) {
@@ -472,7 +472,7 @@
             showLoading('categoriesTable');
             console.log("Loading categories...");
             
-            const data = await fetchData("categories.php?action=get_all");
+            const data = await fetchData("../captain_panel/categories.php?action=get_all");
             console.log("Categories data:", data);
 
             const categoriesTableBody = document.querySelector("#categoriesTable tbody");
@@ -530,7 +530,7 @@
         }
     }
     function loadCategoriesForSelect() {
-        fetch("categories.php?action=get_active")
+        fetch("../captain_panel/categories.php?action=get_active")
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -566,7 +566,7 @@
         const action = formData.id ? 'update' : 'add';
         showProgressForFetch();
         
-        fetch(`categories.php?action=${action}`, {
+        fetch(`../captain_panel/categories.php?action=${action}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -593,7 +593,7 @@
 
     function editCategory(id) {
         showLoadingOverlay();
-        fetch(`categories.php?action=get&id=${id}`)
+        fetch(`../captain_panel/categories.php?action=get&id=${id}`)
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -613,7 +613,7 @@
 
     function toggleCategory(id, currentStatus) {
         showProgressForFetch();
-        fetch("categories.php?action=toggle", {
+        fetch("../captain_panel/categories.php?action=toggle", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id, is_active: !currentStatus })
@@ -643,7 +643,7 @@
         }
 
         showProgressForFetch();
-        fetch("categories.php?action=delete", {
+        fetch("../captain_panel/categories.php?action=delete", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id })
@@ -687,7 +687,7 @@
     async function loadBillDetails() {
         try {
             console.log('Fetching bill details for completed orders with Bill Generated');
-            const response = await fetch('orders.php?action=get_completed');
+            const response = await fetch('../process/orders.php?action=get_completed');
             const result = await response.json();
             console.log('Bill Details Data:', result); // Debug: Check full response
             
@@ -760,7 +760,7 @@
     async function printBill(orderId) {
         try {
             console.log('Generating bill for orderId:', orderId); // Debug: Verify orderId
-            const response = await fetch('orders.php?action=get_bill_details', {
+            const response = await fetch('../process/orders.php?action=get_bill_details', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orderId: orderId })
@@ -894,7 +894,7 @@
         showLoading('dishesTable');
         showProgressForFetch();
 
-        fetch("dishes.php?action=get_all")
+        fetch("../process/dishes.php?action=get_all")
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -969,7 +969,7 @@
         const action = formData.id ? 'update' : 'add';
         showProgressForFetch();
         
-        fetch(`dishes.php?action=${action}`, {
+        fetch(`../process/dishes.php?action=${action}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -995,7 +995,7 @@
 
     function editDish(id) {
         showLoadingOverlay();
-        fetch(`dishes.php?action=get&id=${id}`)
+        fetch(`../process/dishes.php?action=get&id=${id}`)
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -1017,7 +1017,7 @@
 
     function toggleDishAvailability(id, isAvailable) {
         showProgressForFetch();
-        fetch("dishes.php?action=toggle_availability", {
+        fetch("../process/dishes.php?action=toggle_availability", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id, is_available: isAvailable })
@@ -1046,7 +1046,7 @@
         }
 
         showProgressForFetch();
-        fetch("dishes.php?action=delete", {
+        fetch("../process/dishes.php?action=delete", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id })
@@ -1105,7 +1105,7 @@
                 for (const order of result.data) {
                     console.log('Rendering order:', order);
     
-                    const prepResponse = await fetch(`orders.php?action=get_order_preparation_status&orderId=${order.id}`);
+                    const prepResponse = await fetch(`../process/orders.php?action=get_order_preparation_status&orderId=${order.id}`);
                     const prepResult = await prepResponse.json();
                     let derivedStatus = 'processing';
                     if (prepResult.success) {
@@ -1241,12 +1241,12 @@
 
     async function updateOrderStatus(orderId, status) {
         try {
-            let endpoint = 'orders.php?action=update';
+            let endpoint = '../process/orders.php?action=update';
             let payload = { id: orderId, status };
 
             if (status === 'food_prepared') {
                 // Special handling for marking all dishes as prepared
-                endpoint = 'mark_all_dishes_prepared.php';
+                endpoint = '../chef_panel/mark_all_dishes_prepared.php';
                 payload = { orderId };
             }
 
@@ -1288,7 +1288,7 @@
     async function loadCompletedOrders() {
         try {
             console.log('Fetching completed orders');
-            const response = await fetch('orders.php?action=get_completed');
+            const response = await fetch('../process/orders.php?action=get_completed');
             const result = await response.json();
             console.log('Completed Orders Data:', result); // Debug: Check full response
             if (result.success && result.data) {
@@ -1518,7 +1518,7 @@
     async function fetchDishPrice(dishName) {
         try {
             if (!dishCache) {
-                const response = await fetch('dishes.php?action=get_all');
+                const response = await fetch('../process/dishes.php?action=get_all');
                 if (!response.ok) throw new Error('Failed to fetch dishes');
                 const data = await response.json();
                 dishCache = {};
@@ -1549,7 +1549,7 @@
     async function generateBill(orderId) {
         try {
             console.log('Generating bill for orderId:', orderId); // Debug: Verify orderId
-            const response = await fetch('orders.php?action=generate_bill', {
+            const response = await fetch('../process/orders.php?action=generate_bill', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orderId: orderId }) // Explicitly name the key
@@ -1638,7 +1638,7 @@
     async function loadAdminTables() {
         try {
             showLoading('adminTablesGrid');
-            const response = await fetch('get_tables.php');
+            const response = await fetch('../process/get_tables.php');
             const data = await response.json();
             
             if (data.success) {
@@ -1707,7 +1707,7 @@
     }
 
     async function editTable(tableId) {
-        const table = await fetchWithErrorHandling(`get_tables.php?id=${tableId}`);
+        const table = await fetchWithErrorHandling(`../process/get_tables.php?id=${tableId}`);
         if (!table.success) return;
 
         const capacity = await showPrompt('Enter new capacity:', table.data.capacity);
@@ -1810,7 +1810,7 @@
         if (!confirm("Mark this order as completed?")) return;
 
         showProgressForFetch();
-        fetch("orders.php?action=update", {
+        fetch("../process/orders.php?action=update", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -1840,7 +1840,7 @@
     }
     // -------------------- Statistics & Reports --------------------
     function loadPendingOrdersCount() {
-        fetch("orders.php?action=get_pending_count")
+        fetch("../process/orders.php?action=get_pending_count")
             .then(response => response.json())
             .then(data => {
                 document.getElementById("pending-orders-count").textContent = data.pending_count || '0';
@@ -1852,7 +1852,7 @@
     }
 
     function loadCompletedOrdersCount() {
-        fetch("orders.php?action=get_completed_count")
+        fetch("../process/orders.php?action=get_completed_count")
             .then(response => response.json())
             .then(data => {
                 document.getElementById("completed-orders-count").textContent = data.completed_count || '0';
@@ -1864,7 +1864,7 @@
     }
 
     function loadPopularDishes() {
-        fetch("orders.php?action=get_popular_dishes")
+        fetch("../process/orders.php?action=get_popular_dishes")
             .then(response => response.json())
             .then(data => {
                 if (data.success && data.popular_dishes) {
@@ -1935,7 +1935,7 @@
     
         console.log(`Loading ${reportType} report with period: ${period}`);
     
-        let url = `reports.php?type=${reportType}`;
+        let url = `../admin_panel/reports.php?type=${reportType}`;
         if (period) {
             url += `&period=${period}`;
         }
@@ -2092,7 +2092,7 @@
             </div>
         `;
     
-        fetch(`reports.php?type=${currentReportType}&start_date=${startDate}&end_date=${endDate}`)
+        fetch(`../admin_panel/reports.php?type=${currentReportType}&start_date=${startDate}&end_date=${endDate}`)
             .then(async response => {
                 console.log('Response status:', response.status);
                 const text = await response.text();
@@ -2205,7 +2205,7 @@
     function exportReport(reportType, format) {
         showLoadingOverlay();
         
-        fetch(`reports.php?action=export&type=${reportType}&format=${format}`)
+        fetch(`../admin_panel/reports.php?action=export&type=${reportType}&format=${format}`)
             .then(response => {
                 if (!response.ok) throw new Error('Export failed');
                 return response.blob();
@@ -2236,8 +2236,8 @@
         const notificationEl = document.getElementById("newOrderNotification");
         const newOrderCountEl = document.getElementById("newOrderCount");
         const notificationBadgeEl = document.querySelector(".notification-badge");
-        const notificationSound = new Audio("sounds/2.mp3");
-        const overdueSound = new Audio("sounds/3.mp3"); // Add a different sound for overdue orders
+        const notificationSound = new Audio("../sounds/2.mp3");
+        const overdueSound = new Audio("../sounds/3.mp3"); // Add a different sound for overdue orders
         const checkInterval = 5000; // Check every 5 seconds
         let isNotificationVisible = false;
         let lastNewOrderCount = 0; // Track previous new order count
@@ -2257,7 +2257,7 @@
 
         async function checkForNewOrders() {
             try {
-                const response = await fetch('orders.php?action=check_new_orders', {
+                const response = await fetch('../process/orders.php?action=check_new_orders', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/x-www-form-urlencoded',
@@ -2296,7 +2296,7 @@
                 lastNewOrderCount = data.new_orders_count;
 
                 // Check for overdue orders
-                const activeOrdersResponse = await fetch('orders.php?action=get_active_orders');
+                const activeOrdersResponse = await fetch('../process/orders.php?action=get_active_orders');
                 const activeOrdersData = await activeOrdersResponse.json();
                 if (activeOrdersData.success && activeOrdersData.data) {
                     activeOrdersData.data.forEach(order => {
@@ -2365,7 +2365,7 @@
             return;
         }
 
-        fetchData(`orders.php?action=search&query=${encodeURIComponent(searchQuery)}`)
+        fetchData(`../process/orders.php?action=search&query=${encodeURIComponent(searchQuery)}`)
             .then(response => {
                 // Filter active orders (not completed)
                 const activeOrders = response.data.filter(order => order.status !== 'bill_generated');
@@ -2552,7 +2552,7 @@
                 loadRevenueStats.popupShownToday = localStorage.getItem('lastRevenuePopupDate') === new Date().toDateString();
             }
             
-            let url = `orders.php?action=get_revenue_stats&timeframe=${timeframe}`;
+            let url = `../process/orders.php?action=get_revenue_stats&timeframe=${timeframe}`;
             if (selectedDate) {
                 url += `&selected_date=${selectedDate}`;
             }
@@ -2854,7 +2854,7 @@
             return;
         }
 
-        fetchData(`orders.php?action=search&query=${encodeURIComponent(searchQuery)}`)
+        fetchData(`../process/orders.php?action=search&query=${encodeURIComponent(searchQuery)}`)
             .then(response => {
                 const billedOrders = response.data.filter(order => 
                     order.status === 'completed' && order.bill_generated
@@ -2906,7 +2906,7 @@
 
 
     function loadTodayRevenue() {
-        fetch("orders.php?action=get_today_revenue")
+        fetch("../process/orders.php?action=get_today_revenue")
             .then(response => response.json())
             .then(data => {
                 const revenueElement = document.getElementById("today-revenue");
@@ -2985,13 +2985,13 @@
         let url = '';
         switch (panel) {
             case 'waiter':
-                url = 'captain_panel.php'; // Update with actual waiter panel URL
+                url = '../captain_panel/captain_panel.php'; // Update with actual waiter panel URL
                 break;
             case 'chef':
-                url = 'chef_panel.php'; // Update with actual chef panel URL
+                url = '../chef_panel/chef_panel.php'; // Update with actual chef panel URL
                 break;
                 case 'waiter':
-                    url = 'waiter_panel.php'; // Update with actual chef panel URL
+                    url = '../waiter_panel/waiter_panel.php'; // Update with actual chef panel URL
                     break;
             default:
                 url = '#';
@@ -3016,7 +3016,7 @@
     async function loadPaymentStats(timeframe = 'today') {
         try {
             console.log('Fetching payment stats for timeframe:', timeframe);
-            const response = await fetch(`orders.php?action=get_payment_stats&timeframe=${timeframe}`);
+            const response = await fetch(`../process/orders.php?action=get_payment_stats&timeframe=${timeframe}`);
             if (!response.ok) throw new Error('Failed to fetch payment statistics');
             
             const data = await response.json();

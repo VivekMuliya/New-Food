@@ -5,8 +5,8 @@ let previousOrders = []; // Track previous orders to detect new ones
 let previousNotificationCount = 0; // Track previous count for bell animation
 
 // Sound notifications
-const newOrderSound = new Audio('sounds/pop_pop_pop.mp3'); // Sound for new orders
-const newDishSound = new Audio('sounds/bubble_pop.mp3');   // Sound for new dishes
+const newOrderSound = new Audio('../sounds/pop_pop_pop.mp3'); // Sound for new orders
+const newDishSound = new Audio('../sounds/bubble_pop.mp3');   // Sound for new dishes
 
 // Initialize on document load
 document.addEventListener('DOMContentLoaded', () => {

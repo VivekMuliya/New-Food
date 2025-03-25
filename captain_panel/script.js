@@ -313,7 +313,7 @@ function debounce(func, wait) {
 async function loadActiveOrders() {
     try {
         showLoading();
-        const response = await fetch('get_active_orders.php');
+        const response = await fetch('../process/get_active_orders.php');
         const result = await response.json();
         if (result.success) {
             const today = new Date();
@@ -581,7 +581,7 @@ let tablePollingInterval;
 
 async function loadTables() {
     try {
-        const response = await fetch('get_tables.php');
+        const response = await fetch('../process/get_tables.php');
         const data = await response.json();
         if (data.success) {
             tablesData = data.data;
@@ -968,7 +968,7 @@ function setupDishEventListeners(dishDiv) {
 }
 
 function loadDishes() {
-    fetch('get_dishes.php')
+    fetch('../process/get_dishes.php')
         .then(response => response.json())
         .then(result => {
             if (result.success) {
@@ -1125,7 +1125,7 @@ document.getElementById('orderForm')?.addEventListener('submit', async function(
         const handleConfirm = async () => {
             try {
                 if (confirmModal) confirmModal.style.display = 'none';
-                const result = await fetchWithErrorHandling('place_order.php', {
+                const result = await fetchWithErrorHandling('../process/place_order.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderData)
@@ -1255,7 +1255,7 @@ let activeOrdersModalOpen = false; // Track if the modal is open
 // Function to start SSE updates
 function startRealtimeUpdatesWithSSE() {
     if (typeof EventSource !== 'undefined' && !eventSource) {
-        eventSource = new EventSource('get_order_updates_sse.php');
+        eventSource = new EventSource('../process/get_order_updates_sse.php');
         eventSource.onmessage = function(event) {
             const update = JSON.parse(event.data);
             if (update.error) {
@@ -1286,7 +1286,7 @@ function startOrderPolling() {
     if (!orderPollingInterval) {
         orderPollingInterval = setInterval(async () => {
             try {
-                const response = await fetch('get_active_orders.php');
+                const response = await fetch('../process/get_active_orders.php');
                 const result = await response.json();
                 if (result.success) {
                     const today = new Date();

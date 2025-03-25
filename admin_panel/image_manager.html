@@ -349,7 +349,7 @@
 
     async function loadCategories() {
         try {
-            const response = await fetch('categories.php?action=get_all');
+            const response = await fetch('../process/categories.php?action=get_all');
             const data = await response.json();
             
             categoryFilter.innerHTML = '<option value="">All Categories</option>';
@@ -368,7 +368,7 @@
         try {
             showLoading();
             const categoryId = categoryFilter.value;
-            const url = `get_dishes.php${categoryId ? `?category=${categoryId}` : ''}`;
+            const url = `../process/get_dishes.php${categoryId ? `?category=${categoryId}` : ''}`;
             
             const response = await fetch(url);
             const data = await response.json();
@@ -502,7 +502,7 @@ async function deleteSelected() {
 
         for (const id of selectedIds) {
             try {
-                const dishResponse = await fetch(`dishes.php?action=get&id=${id}`);
+                const dishResponse = await fetch(`../process/dishes.php?action=get&id=${id}`);
                 const dishData = await dishResponse.json();
 
                 // Skip if already using default image
@@ -512,7 +512,7 @@ async function deleteSelected() {
                 }
 
                 // Update to default image
-                const response = await fetch('dishes.php?action=update', {
+                const response = await fetch('../process/dishes.php?action=update', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -593,7 +593,7 @@ async function uploadImages(event) {
                 formData.append('image', upload.file);
                 formData.append('dish_id', upload.dishId);
 
-                const response = await fetch('upload_image.php', {
+                const response = await fetch('../admin_panel/upload_image.php', {
                     method: 'POST',
                     body: formData
                 });
@@ -641,12 +641,12 @@ async function uploadImages(event) {
 
 // Delete image function (removes image while keeping dish record)
 
-const DEFAULT_DISH_IMAGE = '/food-shop/default_image/default-recipe-big.png';
+const DEFAULT_DISH_IMAGE = '../default_image/default-recipe-big.png';
 
 async function deleteImage(id) {
     try {
         // Fetch the dish details first
-        const dishResponse = await fetch(`dishes.php?action=get&id=${id}`);
+        const dishResponse = await fetch(`../process/dishes.php?action=get&id=${id}`);
         if (!dishResponse.ok) {
             throw new Error('Failed to fetch dish details');
         }
@@ -660,7 +660,7 @@ async function deleteImage(id) {
         }
 
         // Update dish record to set default image
-        const response = await fetch('dishes.php?action=update', {
+        const response = await fetch('../process/dishes.php?action=update', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -704,7 +704,7 @@ async function deleteImage(id) {
                 formData.append('image', file);
                 formData.append('dish_id', id);
                 
-                const response = await fetch('upload_image.php', {
+                const response = await fetch('../admin_panel/upload_image.php', {
                     method: 'POST',
                     body: formData
                 });

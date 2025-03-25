@@ -80,7 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="auth-container">
         <div class="auth-card">
             <div class="logo">
-                <i class="fas fa-crown"></i>
                 <h2>Royal Crown Login</h2>
             </div>
             <p class="tagline">Access your panel with elegance</p>

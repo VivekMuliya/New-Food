@@ -118,7 +118,7 @@ if ($_SESSION['role'] !== 'captain') {
                             <label for="payment_method">Payment Method</label>
                             <select id="payment_method" required>
                                 <option value="">Select payment method</option>
-                                <option value="cash">Cash Payment</option>
+                                <option value="cash" selected>Cash Payment</option>
                                 <option value="card">Card Payment</option>
                                 <option value="upi">UPI Payment</option>
                             </select>

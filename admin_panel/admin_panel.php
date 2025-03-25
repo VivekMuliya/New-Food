@@ -23,7 +23,7 @@ if ($_SESSION['role'] !== 'admin') {
     <title>Admin Panel - Royal Crown</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="cutlery.png">
+    <link rel="icon" type="image/png" href="../default_image/cutlery.png">
     
     <!-- Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -123,7 +123,7 @@ if ($_SESSION['role'] !== 'admin') {
                         <span class="notification-badge" aria-label="Notification Count">0</span>
                     </div>
                     <div class="user-profile" tabindex="0" role="button" aria-haspopup="true">
-                        <img src="user-setting.png" alt="Admin Profile Picture">
+                        <img src="../default_image/user-setting.png" alt="Admin Profile Picture">
                         <span><?php echo htmlspecialchars($_SESSION['name']); ?> (Admin)</span>
                         <div class="profile-dropdown hidden">
                             <a href="#" role="menuitem"><i class="fas fa-user"></i> Profile</a>

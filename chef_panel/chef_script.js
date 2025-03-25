@@ -9,8 +9,8 @@ let previousOrders = []; // Track previous orders to detect new ones
 let previousNotificationCount = 0; // Track previous count for bell animation
 
 // Sound notifications
-const newOrderSound = new Audio('sounds/pop_pop_pop.mp3'); // Sound for new orders
-const newDishSound = new Audio('sounds/bubble_pop.mp3');   // Sound for new dishes
+const newOrderSound = new Audio('../sounds/pop_pop_pop.mp3'); // Sound for new orders
+const newDishSound = new Audio('../sounds/bubble_pop.mp3');   // Sound for new dishes
 
 // Initialize on document load
 document.addEventListener('DOMContentLoaded', () => {
@@ -547,7 +547,7 @@ function startRealtimeUpdates() {
 
 async function updateStatistics() {
     try {
-        const response = await fetch('orders.php?action=get_chef_order_counts');
+        const response = await fetch('../process/orders.php?action=get_chef_order_counts');
         const result = await response.json();
 
         if (result.success) {
@@ -565,7 +565,7 @@ async function updateStatistics() {
 
 async function updateNotificationCount() {
     try {
-        const response = await fetch('orders.php?action=get_chef_notification_count');
+        const response = await fetch('../process/orders.php?action=get_chef_notification_count');
         const result = await response.json();
         console.log('get_chef_notification_count response:', result);
 
